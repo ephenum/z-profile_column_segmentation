@@ -196,9 +196,9 @@ for i=start_img:end_img;
             col_result_img(floor((y1:y2)/reductionfactor),floor((x1:x2)/reductionfactor))=255-(k-1)*100;
             if write_columns;
                 col=img(y1:y2,x1:x2,:);
-                imwrite(col,fullfile(target_col_folder,[input_imgs(i).name(1:end-4),'_col_',padstr(num2str(k),2,'0'),'_x1_',num2str(x1),'_y1_',num2str(x1),'_x2_',num2str(x2),'_y2_',num2str(y1),'.png']));
+                imwrite(col,fullfile(target_col_folder,[input_imgs(i).name(1:end-4),'_col_',padstr(num2str(k),2,'0'),'_x1_',num2str(x1),'_y1_',num2str(y1),'_x2_',num2str(x2),'_y2_',num2str(y2),'.png']));
                 colBW=imcomplement(binarize_Img(col,strel('disk',30)));
-                imwrite(colBW,fullfile(target_colBW_folder,[input_imgs(i).name(1:end-4),'_col_',padstr(num2str(k),2,'0'),'_x1_',num2str(x1),'_y1_',num2str(x1),'_x2_',num2str(x2),'_y2_',num2str(y1),'.png']));
+                imwrite(colBW,fullfile(target_colBW_folder,[input_imgs(i).name(1:end-4),'_col_',padstr(num2str(k),2,'0'),'_x1_',num2str(x1),'_y1_',num2str(y1),'_x2_',num2str(x2),'_y2_',num2str(y2),'.png']));
             end;
         end;
         
